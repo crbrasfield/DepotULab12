@@ -1,25 +1,31 @@
 $(document).ready(function() {
     console.log('ready');
-    
-    $('#button').click(function(){
-            var post = $('#newtweet').val();
-            console.log(post);
+
+    $('#button').click(function() {
+        var post = $('#newtweet').val();
+        console.log(post);
     });
 
-
-
-    /*Using document ready runs code only after the DOM is ready for js code to run more on that here: https://learn.jquery.com/using-jquery-core/document-ready */
     function postData() {
 
-		/*This function should create a post request using jquery. When posted it should:
-			1) Add tweets to the 'database'
-			2) After posted prepend message to list of messages and clear input box */
     }
 
     function getData() {
-        /*This function should make a get request from 'database', parse the data and prepend each to the page*/
-    }
-
-    /*Calls function once page loaded to display tweets to page*/
+        $.ajax({
+            method: 'GET',
+            url: 'messages',
+        }).done(function(list) {
+            var array = list.split('\n');
+            console.log(array);
+            for (i = 0; i < array.length; i++) {
+                var tweet = array[i];
+                console.log(tweet);
+                var parsedTweet = JSON.parse(tweet);
+                console.log(parsedTweet);
+                var finalTweet = "USER: " + parsedTweet.text;
+                $('.incoming-tweets').prepend('<li>'+finalTweet+'</li>')
+            };
+        });
+    };
     getData();
 });

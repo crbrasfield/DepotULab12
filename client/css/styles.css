@@ -1,0 +1,43 @@
+#tweets {
+    margin: auto;
+    background-color: darkslategray;
+    width: 500px;
+    height: 350px;
+    padding-right: 30px;
+}
+
+#wrapper {
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    color:white;
+    padding-top:15px;
+    text-align: left;
+}
+
+li {
+    padding-top:10px;
+}
+
+
+#button {
+    margin: 0 auto;
+    color: darkslategray;
+    background-color: white;
+    border-color: darkslategray;
+    width: 500px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#new-tweet{
+    margin-bottom: 5px;
+    width: 500px;
+}
